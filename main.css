@@ -1,0 +1,237 @@
+.yellow-bg {
+    background: yellow;
+}
+
+.alert-box {
+    background-color: rgb(171, 125, 214);
+    color:rgb(29, 122, 165);
+    border-radius: 5px;
+    padding: 20px;
+    display: none;
+}
+
+.alert-box p {
+    display: inline;
+}
+
+.display-4 {
+    margin-top: 20px;
+}
+
+.main-background {
+    background-image: url(porsche.jpg);
+    background-size: cover;
+    color: white;
+    border-radius: 0px;
+}
+
+.black-background {
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: all 0.5s;
+    transform: translateY(-1000px);
+}
+
+.slide-down {
+    transition: all 0.5s;
+    transform: translateY(0px);
+}
+
+.slide-up {
+    transition: all 0.5s;
+    transform: translateY(-1000px);
+}
+
+.white-background {
+    background: white;
+    width: 80%;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.nav-logo {
+    transition: all 0.5s;
+    font-size: 30px;
+}
+
+.nav-scrollTop-logo {
+    transition: all 0.5s;
+    font-size: 20px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+    background-color: transparent;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    color: white;
+}
+
+.nav-black {
+    /* transition: all 1; */
+    background: rgba( 255, 255, 255, 0.5 );
+    color: black;
+}
+
+.nav-sub {
+    display: none;
+}
+
+#email-space {
+    display: none;
+}
+
+#password-space {
+    display: none;
+}
+
+.left-menu {
+    width: 150px;
+    height: 100%;
+    background: black;
+    color: white;
+    position: fixed;
+    transition: all 0.5s;
+    transform: translateX(-150px);
+}
+
+.left-menu-right {
+    transition: all 0.5s;
+    transform: translateX(0px);
+}
+
+.slide-container {
+    width: 300vw;
+    /* transition: transform 1s; */
+}
+
+.transforming {
+    transition: transform 0.5s;
+}
+
+.slide-ani1 {
+    transition: all 1s;
+    transform: translateX(0vw);
+}
+
+.slide-ani2 {
+    transition: all 1s;
+    transform: translateX(-100vw);
+}
+
+.slide-ani3 {
+    transition: all 1s;
+    transform: translateX(-200vw);
+}
+
+.slide-box {
+    width: 100vw;
+    float: left;
+}
+
+.slide-box img {
+    width: 100%;
+}
+
+.slide-prev {
+    position: absolute;
+    top: 45%;
+    left: 0;
+}
+
+.slide-next {
+    position: absolute;
+    top: 45%;
+    right: 0;
+}
+
+ul.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+  }
+  ul.list::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .tab-button {
+    display: block;
+    padding: 10px 20px 10px 20px;
+    float: left;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    color: grey;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .active {
+    border-top: 2px solid orange;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid white;
+    border-left: 1px solid #ccc;
+    color: black;
+    margin-top: -2px;
+  }
+  .tab-content {
+    display: none;
+    padding: 10px;
+  }
+  .show {
+    display: block;
+  }
+
+  .size-select {
+    display: block;
+}
+
+.cardNone {
+    display:none;
+}
+
+.grey {
+    background: lightgray;
+    height: 2000px;
+    margin-top: 500px;
+}
+
+.image {
+    float: right;
+    width: 300px;
+    position: sticky;
+    top: 0px;
+}
+
+.text {
+    float: left;
+    width: 300px;
+}
+
+.card-background {
+    height: 3000px;
+    margin-top: 800px;
+    margin-bottom: 1600px;
+}
+
+.card-box img {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+}
+
+.card-box {
+    position: sticky;
+    top: 200px;
+    margin-top: 200px;
+    transition: all 0.2s;
+}

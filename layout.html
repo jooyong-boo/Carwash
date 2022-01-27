@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="card-group container" id="card-main">
+        <!-- <div class="card card1" id="card">
+          <img src="https://via.placeholder.com/600">
+          <div class="card-body">
+            <h5 id="title1">Card title</h5>
+            <p>가격 : <sapn id="price1">70000</sapn></p>
+            <button class="btn btn-danger">주문하기</button>
+          </div>
+        </div>
+        <div class="card card2" id="card">
+          <img src="https://via.placeholder.com/600">
+          <div class="card-body">
+            <h5 id="title2">Card title</h5>
+            <p>가격 : <span id="price2">70000</span></p>
+            <button class="btn btn-danger">주문하기</button>
+          </div>
+        </div>
+        <div class="card card3" id="card">
+          <img src="https://via.placeholder.com/600">
+          <div class="card-body">
+            <h5 id="title3">Card title</h5>
+            <p>가격 : <span id="price3">70000</span></p>
+            <button class="btn btn-danger">주문하기</button>
+          </div>
+        </div> -->
+      </div>
+      
+      <div>
+      <button class="btn btn-danger" id="price-sort">가격순정렬</button>
+      <button class="btn btn-danger" id="alphabet-sort">알파벳순정렬</button>
+      <button class="btn btn-danger" id="price-filter">6만원이하 정렬 <input type="text" name="" id="filter-value"></button>
+      <button class="btn btn-danger" id="reset">초기화 버튼</button>
+      </div>
+      
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <script>
+        let products = [
+          { id : 0,
+            price : 70000, 
+            title : 'Blossom Dress' },
+          { id : 1, 
+            price : 50000, 
+            title : 'Springfield Shirt' },
+          { id : 2, 
+            price : 60000, 
+            title : 'Black Monastery' }
+        ]
+
+        $('#price-sort').click(function () {
+            products.sort(function (a, b) {
+            return a.price - b.price;
+        })
+            dataBind(products);
+        });
+
+        $('#alphabet-sort').click(function () {
+            products.sort(function (a, b) {
+            if (a.title < b.title) {
+                return -1;
+            } else {
+                return 1;
+            }
+        })
+            dataBind(products);
+        });
+
+        // document.getElementById('price-filter').innerHTML = document.getElementById('filter-value').value;
+
+        $('#price-filter').click(function () {
+            $('.card-group').empty('#card');
+            let newProducts = products.filter(function (e) {
+                return e.price <= 60000;
+            }); 
+            
+            newProducts.sort(function (a, b) {
+                return a.price - b.price;
+            })
+            
+                defaultCard(newProducts);
+            });
+
+        $('#reset').click(function () {
+            $('.card-group').empty('#card');
+            defaultCard(products);
+        })
+
+        let dataBind = function (a) {
+            for(i = 0; i < a.length; i++){
+                document.getElementById(`title${[i + 1]}`).innerHTML = a[i].title;
+                document.getElementById(`price${[i + 1]}`).innerHTML = a[i].price;
+            }
+        }  
+    
+        let defaultCard = function (a) {
+        for(i = 0; i < a.length; i++){
+            let createCard = `<div class="card" id="card${i + 1}">
+            <img src="https://via.placeholder.com/600">
+            <div class="card-body">
+                <h5 id="title${i + 1}">${a.title}</h5>
+                <p>가격 : <sapn id="price${i + 1}">${a.price}</sapn></p>
+                <button class="btn btn-danger">주문하기</button>
+            </div>
+            </div>`
+
+            $('.card-group').append(createCard);
+            
+            document.getElementById(`title${[i + 1]}`).innerHTML = a[i].title;
+            document.getElementById(`price${[i + 1]}`).innerHTML = a[i].price;
+            }
+        }
+
+        defaultCard(products);
+      </script>
+</body>
+</html>
